@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>考研数学每日挑战</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { text-align: center; background: white; padding: 50px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h1 { color: #333; margin-bottom: 10px; }
+        p { color: #666; margin-bottom: 30px; }
+        .btn-start {
+            background-color: #007bff; color: white; padding: 15px 40px; font-size: 1.2em;
+            border: none; border-radius: 50px; cursor: pointer; text-decoration: none; transition: 0.3s;
+            display: inline-block;
+        }
+        .btn-start:hover { background-color: #0056b3; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📅 每日数学公式默写</h1>
+        <p>题库共 {{ total_count }} 道题，为您随机抽取 10 道重点公式。</p>
+        <p>准备好草稿纸了吗？</p>
+        <br>
+        <a href="/start" class="btn-start">🚀 开始今日挑战</a>
+    </div>
+</body>
+</html>

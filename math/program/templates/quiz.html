@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>默写中...</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: sans-serif; background: #e9ecef; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 90%; max-width: 700px; text-align: center; }
+        .progress { color: #888; font-size: 0.9em; margin-bottom: 20px; font-weight: bold; }
+        .desc { font-size: 1.2em; color: #444; margin-bottom: 20px; }
+        .math-box { font-size: 1.8em; padding: 30px; background: #fffcf5; border: 2px dashed #ddd; border-radius: 8px; margin-bottom: 30px; min-height: 60px; display: flex; justify-content: center; align-items: center;}
+        .answer-section { display: none; margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px; animation: fadeIn 0.5s; }
+        .answer-math { color: #28a745; font-size: 1.6em; margin: 20px 0; }
+        
+        .btn { padding: 12px 25px; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; margin: 5px; transition: 0.2s; }
+        .btn-check { background: #6c757d; color: white; }
+        .btn-check:hover { background: #5a6268; }
+        .btn-next { background: #007bff; color: white; text-decoration: none; display: inline-block; }
+        .btn-next:hover { background: #0056b3; }
+        
+        /* 默认隐藏下一题按钮，强制先看答案 */
+        #next-btn-container { display: none; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="progress">进度：第 {{ current }} 题 / 共 {{ total }} 题</div>
+        
+        <div class="desc">{{ problem.desc }}</div>
+        
+        <div class="math-box">
+            $$ {{ problem.question }} $$
+        </div>
+
+        <button id="btn-show" class="btn btn-check" onclick="showAnswer()">👀 我写好了，对答案</button>
+        
+        <div id="answer-area" class="answer-section">
+            <p style="color:#999; font-size:0.9em;">标准答案：</p>
+            <div class="answer-math">
+                $$ {{ problem.answer }} $$
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <a href="/next" class="btn btn-next">
+                    {% if current == total %}
+                        🏁 完成挑战
+                    {% else %}
+                        ⏭️ 下一题
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showAnswer() {
+            // 显示答案
+            document.getElementById('answer-area').style.display = 'block';
+            // 隐藏"对答案"按钮，避免重复点击
+            document.getElementById('btn-show').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

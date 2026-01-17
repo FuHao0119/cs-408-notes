@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考研数学每日一练</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify_content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+        }
+        .badge {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .desc {
+            color: #666;
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+        .math-box {
+            font-size: 2em; /* 公式字体调大 */
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #fffcf5; /* 只有题目区域稍微带点暖色，模仿草稿纸 */
+            border: 1px dashed #ccc;
+            border-radius: 8px;
+            min-height: 80px;
+            display: flex;
+            justify_content: center;
+            align-items: center;
+        }
+        .answer-section {
+            display: none; /* 默认隐藏答案 */
+            margin-top: 30px;
+            border-top: 2px solid #eee;
+            padding-top: 20px;
+        }
+        .answer-math {
+            font-size: 1.8em;
+            color: #28a745;
+        }
+        .btn {
+            padding: 12px 30px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin: 5px;
+        }
+        .btn-show { background-color: #6c757d; color: white; }
+        .btn-show:hover { background-color: #5a6268; }
+        
+        .btn-next { background-color: #007bff; color: white; }
+        .btn-next:hover { background-color: #0056b3; }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <span class="badge">考研数学抽查库</span>
+        
+        <p class="desc">{{ problem.desc }}</p>
+        
+        <div class="math-box">
+            $$ {{ problem.question }} $$
+        </div>
+
+        <div>
+            <button class="btn btn-show" onclick="showAnswer()">👀 查看答案</button>
+            <a href="/next"><button class="btn btn-next">⏭️ 下一题</button></a>
+        </div>
+
+        <div id="answer-box" class="answer-section">
+            <p style="color:#888; font-size:0.9em;">标准答案：</p>
+            <div class="answer-math">
+                $$ {{ problem.answer }} $$
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showAnswer() {
+            document.getElementById('answer-box').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
