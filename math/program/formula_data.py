@@ -168,6 +168,26 @@ data = [
         "question": r"\frac{1}{1-x}",
         "answer": r"1 + x + x^2 + \dots + x^n + o(x^n)"
     },
+    {
+        "desc": "【泰勒】1/(1+x) 几何级数",
+        "question": r"\frac{1}{1+x}",
+        "answer": r"1 - x + x^2 - \dots + (-1)^n x^n + o(x^n)"
+    },
+    {
+        "desc": "【泰勒】tan x 的展开",
+        "question": r"\tan x",
+        "answer": r"x + \frac{x^3}{3} + \frac{2x^5}{15} + o(x^5)"
+    },
+    {
+        "desc": "【泰勒】arctan x 的展开",
+        "question": r"\arctan x",
+        "answer": r"x - \frac{x^3}{3} + \frac{x^5}{5} - \dots + (-1)^n \frac{x^{2n+1}}{2n+1} + o(x^{2n+2})"
+    },
+    {
+        "desc": "【泰勒】arcsin x 的展开",
+        "question": r"\arcsin x",
+        "answer": r"x + \frac{1}{2}\frac{x^3}{3} + \frac{1 \cdot 3}{2 \cdot 4}\frac{x^5}{5} + \dots"
+    },
 
     # =========================================================
     # 第四部分：等价无穷小 (x -> 0)
@@ -226,6 +246,16 @@ data = [
         "desc": "【极限】tan x - sin x (三阶小)",
         "question": r"\tan x - \sin x",
         "answer": r"\sim \frac{1}{2}x^3"
+    },
+    {
+        "desc": "【极限】x - ln(1+x) (二阶小)",
+        "question": r"x - \ln(1+x)",
+        "answer": r"\sim \frac{1}{2}x^2"
+    },
+    {
+        "desc": "【极限】(1+x)^a - 1 - ax (二阶小)",
+        "question": r"(1+x)^\alpha - 1 - \alpha x",
+        "answer": r"\sim \frac{\alpha(\alpha-1)}{2}x^2"
     },
 
     # =========================================================
@@ -319,5 +349,24 @@ data = [
         "desc": "【多元】梯度定义",
         "question": r"\mathbf{grad} \, u",
         "answer": r"\frac{\partial u}{\partial x}\mathbf{i} + \frac{\partial u}{\partial y}\mathbf{j} + \frac{\partial u}{\partial z}\mathbf{k}"
+    },
+
+    # =========================================================
+    # 第七部分：重要基本极限 (Important Limits)
+    # =========================================================
+    {
+        "desc": "【极限】第一个重要极限",
+        "question": r"\lim_{x \to 0} \frac{\sin x}{x}",
+        "answer": r"1"
+    },
+    {
+        "desc": "【极限】第二个重要极限 (无穷大形式)",
+        "question": r"\lim_{x \to \infty} (1 + \frac{1}{x})^x",
+        "answer": r"e"
+    },
+    {
+        "desc": "【极限】第二个重要极限 (x->0形式)",
+        "question": r"\lim_{x \to 0} (1 + x)^{1/x}",
+        "answer": r"e"
     }
 ]
