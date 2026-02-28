@@ -654,3 +654,11 @@ y = -1010110 = 1,1010110
 ### 浮点数的表示
 
 <img src="./images/img17.png" alt="image-20260111145320332" />
+
+
+
+### IEEE754的浮点数标准
+
+<img src="./images/img18.png" alt="image-20260111145320332" />
+
+<img src="./images/img19.png" alt="image-20260111145320332" />
